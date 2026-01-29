@@ -123,3 +123,4 @@ Referer leaks
 Caching behavior
 Replay attacks
 That’s usually a high-severity finding.
+
