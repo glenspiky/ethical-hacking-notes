@@ -56,21 +56,23 @@ Host: vulnerable-site.com
 
 ### Preparations
 
-![alt text](image.png)
+![alt text](./screenshots/image-22.png)
 
 1. PIck an end point (root)
 2. Downgrade HTTP
 3. DIsable Update content length
 4. Change The request method to post
 5. Turn on unprintable charactors
-   ![alt text](image-1.png)
-   ![alt text](image-3.png)
-   ![alt text](image-2.png)
-   ![alt text](image-4.png)
-   ![alt text](image-5.png)
+   ![alt text](./screenshots/image-16.png)
+   ![alt text](./screenshots/image-17.png)
+   ![alt text](./screenshots/image-18.png)
+   ![alt text](./screenshots/image-19.png)
+   ![alt text](./screenshots/image-20.png)
 
 ### TE.CL vulnerabilities
+
 Here, the front-end server uses the Transfer-Encoding header and the back-end server uses the Content-Length header. We can perform a simple HTTP request smuggling attack as follows:
+
 ```http
 POST / HTTP/1.1
 Host: vulnerable-website.com
@@ -82,8 +84,8 @@ SMUGGLED
 0
 ```
 
->Note
-**To send this request using Burp Repeater, you will first need to go to the Repeater menu and ensure that the "Update Content-Length" option is unchecked.**
+> Note
+> **To send this request using Burp Repeater, you will first need to go to the Repeater menu and ensure that the "Update Content-Length" option is unchecked.**
 
 You need to include the trailing sequence \r\n\r\n following the final 0.
 
@@ -91,5 +93,5 @@ You need to include the trailing sequence \r\n\r\n following the final 0.
 
 **The back-end server processes the Content-Length header and determines that the request body is 3 bytes long, up to the start of the line following 8. The following bytes, starting with SMUGGLED, are left unprocessed, and the back-end server will treat these as being the start of the next request in the sequence.**
 
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](image-21png)
+![alt text](image-22.png)

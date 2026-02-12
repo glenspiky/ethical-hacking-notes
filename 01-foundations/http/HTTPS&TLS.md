@@ -90,12 +90,12 @@ Certificate contains:
 > -It has both public and private
 
 What the cert entails
-![alt text](image-8.png)
-![alt text](image-10.png)
-![alt text](image-9.png)
-![alt text](image-11.png)
-![alt text](image-12.png)
-![alt text](image-13.png)
+![alt text](./screenshots/image-8.png)
+![alt text](./screenshots/image-10.png)
+![alt text](./screenshots/image-9.png)
+![alt text](./screenshots/image-11.png)
+![alt text](./screenshots/image-12.png)
+![alt text](./screenshots/image-13.png)
 
 ### Certificate Chain
 
@@ -119,8 +119,8 @@ What the cert entails
 
 -Used during TLS handshake
 
-![alt text](image-14.png)
-![alt text](image-15.png)
+![alt text](./screenshots/image-14.png)
+![alt text](./screenshots/image-15.png)
 
 - Root CA:
 - Intermediate CA:
